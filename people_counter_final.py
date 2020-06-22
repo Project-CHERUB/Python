@@ -249,8 +249,9 @@ while True:
 	# moving 'up' or 'down'
 	# cv2.line(frame, (0, H // 2), (W, H // 2), (0, 255, 255), 2)
 	# print(np.array(entrances[0].exterior.coords[:-1],np.int32))
-	polycoords = np.int32(np.array(entrances[0].exterior.coords[:-1]))
-	cv2.polylines(frame, [polycoords], True, (0,255,0))
+	for entrance in entrances:
+		polycoords = np.int32(np.array(entrance.exterior.coords[:-1]))
+		cv2.polylines(frame, [polycoords], True, (0,255,0))
 
 	# use the centroid tracker to associate the (1) old object
 	# centroids with (2) the newly computed object centroids
