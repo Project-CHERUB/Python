@@ -1,3 +1,4 @@
+# from https://www.pyimagesearch.com/2018/07/23/simple-object-tracking-with-opencv/
 class TrackableObject:
 	def __init__(self, objectID, centroid):
 		# store the object ID, then initialize a list of centroids
